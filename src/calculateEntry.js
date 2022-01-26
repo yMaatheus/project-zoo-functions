@@ -19,7 +19,7 @@ function calculateEntry(entrants) {
     return 0;
   }
   const count = Object.entries(countEntrants(entrants));
-  return count.reduce((acc, current) => acc + data.prices[current[0]] * current[1], 0);
+  return count.reduce((acc, [entrantyType, countEntrant]) => acc + data.prices[entrantyType] * countEntrant, 0);
 }
 
 module.exports = { calculateEntry, countEntrants };
